@@ -1,14 +1,14 @@
-const app = require("express")();
-const db = require("./db");
+const express = require("express");
+const db = require("./src/db");
+const api = require("./src/api")
+
+const app = express();
+const router = express.Router();
 
 /**
 * Api route for GET: *
 */
-app.get("*", function(request, response){
-  return db.find({alpha:1}).then(function(data){
-    response.json(data);
-  }).catch(response.status(500).send);
-});
+app.use("*", api);
 
 // Wait for DB to be ready before informing about location
 db.ready().then(function(){

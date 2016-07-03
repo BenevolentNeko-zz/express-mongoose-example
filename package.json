@@ -1,6 +1,14 @@
 {
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
   "dependencies": {
     "express": "^4.14.0",
     "mongoose": "^4.5.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "proxyquire": "^1.7.10",
+    "supertest": "^1.2.0"
   }
 }
